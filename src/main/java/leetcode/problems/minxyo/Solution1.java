@@ -8,10 +8,40 @@ public class Solution1 {
     System.out.println(getLength("YOX"));
     System.out.println(getLength("OOOXOOYOXO"));
     System.out.println(getLength("OOOXXOY"));
-    System.out.println(getLength("OXOYYX"));
+    System.out.println(getLength("OYXOYYOX"));
   }
 
   public static int getLength(String text) {
-    return 0;
+    int length = text.length();
+    int indexX = -1;
+    int indexY = -1;
+    int minDistance = length;
+
+    for (int i = 0; i < length; i++) {
+
+      if (text.charAt(i) == 'X') {
+        indexX = i;
+        if (indexY >= 0) {
+          int distance = Math.abs(indexX - indexY);
+          if (distance < minDistance) {
+            minDistance = distance;
+          }
+        }
+      } else if (text.charAt(i) == 'Y') {
+        indexY = i;
+        if (indexX >= 0) {
+          int distance = Math.abs(indexX - indexY);
+          if (distance < minDistance) {
+            minDistance = distance;
+          }
+        }
+      }
+    }
+
+    if (indexY < 0 || indexX < 0) {
+      return 0;
+    }
+
+    return minDistance;
   }
 }
