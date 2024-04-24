@@ -1,4 +1,4 @@
-package leetcode.problems.minxyo;
+package leetcode.problems.min_xyo;
 
 public class Solution1 {
   public static void main(String[] args) {
