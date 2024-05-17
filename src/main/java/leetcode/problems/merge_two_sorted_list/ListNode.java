@@ -1,13 +1,14 @@
 package leetcode.problems.merge_two_sorted_list;
 
 public class ListNode {
-  int val;
-  ListNode next;
+    int val;
+    ListNode next;
 
-  ListNode() {}
+    ListNode() {
+    }
 
-  ListNode(int val, ListNode next) {
-    this.val = val;
-    this.next = next;
-  }
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
 }
